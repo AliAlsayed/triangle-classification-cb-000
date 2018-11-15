@@ -4,7 +4,10 @@ class Triangle
   end
 
   def kind
-
+    if invalid?
+      begin
+        raise TriangleError
+      end
   end
 
   def invalid?
@@ -12,6 +15,8 @@ class Triangle
   end
 
   class TriangleError < StandardError
-
+    def message
+      "Invalid triangle!"
+    end
   end
 end
