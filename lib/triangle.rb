@@ -32,5 +32,5 @@ class Triangle
   end
 end
 
-t = Triangle.new(2, 2, 2)
+t = Triangle.new(2, 4, 3)
 p t.kind
