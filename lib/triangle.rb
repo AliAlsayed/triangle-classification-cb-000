@@ -31,3 +31,5 @@ class Triangle
     end
   end
 end
+
+t = Triangle.new(0, 0, 0)
