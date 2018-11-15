@@ -10,6 +10,15 @@ class Triangle
       rescue TriangleError => error
         puts error.message
       end
+    else
+      if @sides.all?{|s| s == @sides[0]}
+        return :equilateral
+      elsif @sides[0] == @sides[1] || @sides[0] == @sides[2] || @sides[1] == @sides[2]
+        return :isosceles
+      else
+        return :scalene
+      end
+    end
   end
 
   def invalid?
