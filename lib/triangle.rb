@@ -4,14 +4,14 @@ class Triangle
   end
 
   def kind
-    
+
   end
 
   def invalid?
-    @sides.any?{|x| x == 0}
+    @sides.any?{|x| x == 0} || @sides[0] + @sides[1] < @sides[2] 
   end
 
   class TriangleError < StandardError
-    
+
   end
 end
