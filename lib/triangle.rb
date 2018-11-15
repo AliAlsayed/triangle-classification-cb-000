@@ -7,11 +7,13 @@ class Triangle
     if invalid?
       begin
         raise TriangleError
+      rescue TriangleError => error
+        puts error.message
       end
   end
 
   def invalid?
-    @sides.any?{|x| x == 0} || (@sides[0] + @sides[1]) < @sides[2] || (@sides[1] + @sides[2]) < @sides[0] || (@sides[0] + @sides[2]) < @sides[1] 
+    @sides.any?{|x| x == 0} || (@sides[0] + @sides[1]) < @sides[2] || (@sides[1] + @sides[2]) < @sides[0] || (@sides[0] + @sides[2]) < @sides[1]
   end
 
   class TriangleError < StandardError
